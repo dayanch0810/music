@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->timestamp('start');
-            $table->timestamp('end');
+            $table->date('start')->useCurrent();
+            $table->date('end')->useCurrent();
         });
     }
 
